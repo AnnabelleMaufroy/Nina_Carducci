@@ -43,6 +43,10 @@ body {
 	padding-block: 100px;
 	position: relative;
 }
+.carousel-item img{
+	width: 1024px;
+	height: auto;
+}
 .picture.left::before {
 	content: ' ';
 	background-color: #E5975F;
@@ -52,6 +56,10 @@ body {
 	bottom: 0;
 	left: 0;
 	z-index: -1;
+}
+.picture.left img{
+	width:392px;
+	height: auto;
 }
 .picture {
 	flex: 1;
@@ -189,6 +197,10 @@ body {
 	bottom: 0;
 	right: 0;
 	z-index: -1;
+}
+.picture.right img{
+	width:380px;
+	height: auto;
 }
 .form-container {
 	flex : 2;

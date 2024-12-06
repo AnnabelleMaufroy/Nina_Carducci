@@ -12,7 +12,6 @@
         );
       }
       $.fn.mauGallery.listeners(options);
-
       $(this)
         .children(".gallery-item")
         .each(function(index) {
@@ -28,7 +27,6 @@
             tagsCollection.push(theTag);
           }
         });
-
       if (options.showTags) {
         $.fn.mauGallery.methods.showItemTags(
           $(this),
@@ -36,7 +34,6 @@
           tagsCollection
         );
       }
-
       $(this).fadeIn(500);
     });
   };
@@ -56,7 +53,6 @@
         return;
       }
     });
-
     $(".gallery").on("click", ".nav-link", $.fn.mauGallery.methods.filterByTag);
     $(".gallery").on("click", ".mg-prev", () =>
       $.fn.mauGallery.methods.prevImage(options.lightboxId)
@@ -147,10 +143,9 @@
       }
       let index = 0,
         next = null;
-
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
-          index = i ;
+          index = i - 1 ;
         }
       });
       next =
@@ -189,7 +184,7 @@
 
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
-          index = i;
+          index = i+1;
         }
       });
       next = imagesCollection[index] || imagesCollection[0];
@@ -226,7 +221,6 @@
                 <span class="nav-link"  data-images-toggle="${value}">${value}</span></li>`;
       });
       var tagsRow = `<ul class="my-4 tags-bar nav nav-pills">${tagItems}</ul>`;
-
       if (position === "bottom") {
         gallery.append(tagsRow);
       } else if (position === "top") {
@@ -241,9 +235,7 @@
       }
       $(".active-tag").removeClass("active active-tag");
       $(this).addClass("active active-tag");
-
       var tag = $(this).data("images-toggle");
-
       $(".gallery-item").each(function() {
         $(this)
           .parents(".item-column")
